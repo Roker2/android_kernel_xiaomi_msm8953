@@ -1,6 +1,4 @@
 CONFIG_LOCALVERSION="-EnglezosKernel"
-#hotplugs
-CONFIG_AIO_HOTPLUG=y
 # CONFIG_LOCALVERSION_AUTO is not set
 # CONFIG_USELIB is not set
 CONFIG_AUDIT=y
