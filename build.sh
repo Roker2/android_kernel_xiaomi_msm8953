@@ -16,20 +16,20 @@ BUILD_START=$(date +"%s")
 KERNEL_DIR=$PWD
 REPACK_DIR=$KERNEL_DIR/AnyKernel3
 OUT=$KERNEL_DIR/out
-VERSION="r21"
+VERSION="r22"
 export ARCH=arm64 && export SUBARCH=arm64
-export CROSS_COMPILE="/home/englezos/kernel/aarch64-linux-android-4.9/bin/aarch64-linux-android-"
+export CROSS_COMPILE="/home/dmitry/aarch64-linux-android-4.9/bin/aarch64-linux-android-"
 
 rm -rf out
 mkdir -p out
 make O=out clean
 make O=out mrproper
 make O=out mido_defconfig
-make O=out -j$(nproc --all)
+make O=out -j1
 
 cd $REPACK_DIR
 cp $KERNEL_DIR/out/arch/arm64/boot/Image.gz-dtb $REPACK_DIR/
-FINAL_ZIP="EnglezosKernel-${VERSION}.zip"
+FINAL_ZIP="CarbonEnglezos-${VERSION}.zip"
 zip -r9 "${FINAL_ZIP}" *
 cp *.zip $OUT
 rm *.zip
