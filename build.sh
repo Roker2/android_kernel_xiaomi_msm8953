@@ -25,7 +25,7 @@ mkdir -p out
 make O=out clean
 make O=out mrproper
 make O=out mido_defconfig
-make O=out -j1
+make O=out -j4
 
 cd $REPACK_DIR
 cp $KERNEL_DIR/out/arch/arm64/boot/Image.gz-dtb $REPACK_DIR/
